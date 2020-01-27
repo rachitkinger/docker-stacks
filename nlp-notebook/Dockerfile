@@ -42,10 +42,12 @@ RUN conda install --quiet --yes \
     'vincent=0.4.*' \
     'xlrd'
 
-    # install nlp specific packages
+    # install nlp and bigquery specific packages
 RUN conda install -c conda-forge --quiet --yes \
     'spacy=2.1.*' \
-    'newspaper3k=0.2.8'
+    'newspaper3k=0.2.8' \
+    'google-cloud-bigquery=1.22.*' \
+    'google-auth-oauthlib'
     # install spacy's required model for english
 RUN python -m spacy download en_core_web_md
     # install nltk and its stopwords corpus
